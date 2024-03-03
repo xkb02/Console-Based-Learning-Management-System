@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace csharpa1
 {
-    internal class Person
+    public class Person
     {
         //private fields
         private string? name;
