@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharpa1
 {
-    internal class ContentItem
+    public class ContentItem
     {
         private string? name;
         private string? description;

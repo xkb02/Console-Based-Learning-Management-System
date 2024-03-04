@@ -60,7 +60,9 @@ namespace csharpa1
                         menuHelper.courseManager.CourseSearch();
                         break;
                     case "8":
-                        menuHelper.personManager.PersonSearch();
+                        Console.WriteLine("Enter Student Name for Search: ");
+                        string? name = Console.ReadLine();
+                        menuHelper.personManager.Search(name);
                         break;
                     case "9":
                         menuHelper.personManager.PersonCourseDisp();

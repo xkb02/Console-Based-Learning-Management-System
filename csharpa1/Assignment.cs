@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace csharpa1
 {
-    internal class Assignment
+    public class Assignment
     {
         private string? name;
         private string? description;
