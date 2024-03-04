@@ -57,6 +57,10 @@ namespace csharpa1
         }
 
 
+        public enum PersonClassification
+        {
+            Freshman, Sophomore, Junior, Senior
+        }
 
         public void AddEnrolled(string name)
         {

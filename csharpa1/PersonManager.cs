@@ -16,7 +16,7 @@ namespace csharpa1
         public IEnumerable<Person?>? people
         {
             get {
-                return FakeDatabase.people.Where(p => p is Person).Select(p => p as Person);
+                return FakeDatabase.People.Where(p => p is Person).Select(p => p as Person);
             }
         }
 
@@ -25,7 +25,7 @@ namespace csharpa1
         //functions
         public void AddPerson(Person person)
         {
-            FakeDatabase.people.Add(person);
+            FakeDatabase.People.Add(person);
         }
 
         public PersonManager()

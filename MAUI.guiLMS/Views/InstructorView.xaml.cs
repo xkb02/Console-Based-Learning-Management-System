@@ -14,4 +14,9 @@ public partial class InstructorView : ContentPage
 	{
 		Shell.Current.GoToAsync("//MainPage");
 	}
+
+	private void AddEnrollementClicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//PersonDetail");
+    }
 }
