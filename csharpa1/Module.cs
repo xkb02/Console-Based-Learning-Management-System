@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharpa1
 {
-    internal class Module
+    public class Module
     {
         private string? name;
         private string? description;

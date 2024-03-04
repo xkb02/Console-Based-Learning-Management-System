@@ -14,6 +14,7 @@ namespace csharpa1
         private string? name;
         private string? classification;
         private string? grades;
+        private string? id;
         private List<string>? enrolledCourses;
 
         //constructor
@@ -31,6 +32,12 @@ namespace csharpa1
         {
             get { return enrolledCourses; }
             set { enrolledCourses = value; }
+        }
+
+        public string? Id
+        {
+            get { return name; }
+            set { name = value; }
         }
         public string? Name
         {

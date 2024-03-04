@@ -7,7 +7,7 @@ using System.Collections.Specialized;
 
 namespace csharpa1
 {
-    internal class Course
+    public class Course
     {
         //private fields
         private string? code;

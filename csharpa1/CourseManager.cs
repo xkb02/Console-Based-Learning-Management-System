@@ -1,4 +1,5 @@
-﻿using System;
+﻿using csharpa1.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -11,12 +12,36 @@ namespace csharpa1
     internal class CourseManager
     {
         //creates a list of all the courses created in the program
-        public List<Course> courses = new List<Course>();
+        //public List<Course> courses = new List<Course>();
         public List<Assignment> assignments = new List<Assignment>();
+
+        //new additions for maui proj
+        private static CourseManager? _instance;
+
+        public List<Course> courses
+        {
+            get
+            {
+                return FakeDatabase.courses;
+            }
+        }
+        public static CourseManager Current
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new CourseManager();
+                }
+
+                return _instance;
+            }
+        }
+
 
         public void AddCourse(Course course)
         {
-            courses.Add(course);
+            FakeDatabase.courses.Add(course);
         }
         public void AddAssignment(Assignment asgn)
         {
@@ -70,7 +95,7 @@ namespace csharpa1
                 Console.WriteLine("Enter Course name: ");
                 var name = Console.ReadLine();
                 bool found = false;
-                foreach (var course in courses)
+                foreach (var course in FakeDatabase.courses)
                 {
                     if (course.Name == name)
                     {
@@ -91,7 +116,7 @@ namespace csharpa1
                 Console.WriteLine("Enter course code: ");
                 var code = Console.ReadLine();
                 bool found = false;
-                foreach (var course in courses)
+                foreach (var course in FakeDatabase.courses)
                 {
                     if (course.Code == code)
                     {
@@ -113,7 +138,7 @@ namespace csharpa1
                 Console.WriteLine("Enter course description: ");
                 var desc = Console.ReadLine();
                 bool found = false;
-                foreach (var course in courses)
+                foreach (var course in FakeDatabase.courses)
                 {
                     if (course.Description == desc)
                     {
@@ -139,7 +164,7 @@ namespace csharpa1
             Console.WriteLine("Update a Course's Information, Enter the code of the course you wish to update: ");
             var code = Console.ReadLine();
             bool found = false;
-            foreach (var course in courses)
+            foreach (var course in FakeDatabase.courses)
             {
                 if (course.Code == code)
                 {
