@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static csharpa1.Person;
 
 namespace csharpa1
 {
@@ -21,6 +22,19 @@ namespace csharpa1
         }
 
         private static PersonManager? _instance;
+
+        public static PersonManager Current
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new PersonManager();
+                }
+
+                return _instance;
+            }
+        }
 
         //functions
         public void AddPerson(Person person)
@@ -45,7 +59,24 @@ namespace csharpa1
                     Console.WriteLine("Enter the new student name: ");
                     person.Name = Console.ReadLine();
                     Console.WriteLine("Enter the new student classification: ");
-                    person.Classification = Console.ReadLine();
+
+                    switch (Console.ReadLine())
+                    {
+                        case "Fr":
+                            person.Classification = PersonClassification.Freshman;
+                            break;
+                        case "So":
+                            person.Classification = PersonClassification.Sophomore;
+                            break;
+                        case "Jr":
+                            person.Classification = PersonClassification.Junior;
+                            break;
+                        case "Sr":
+                            person.Classification = PersonClassification.Senior;
+                            break;
+
+                    }
+
                     Console.WriteLine("Enter the new student grades: ");
                     person.Grades = Console.ReadLine();
                     Console.WriteLine("Student " + person.Name + " updated.");
@@ -103,18 +134,18 @@ namespace csharpa1
 
         //}
 
-        public static PersonManager Current
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new PersonManager();
-                }
+        //public static PersonManager Current
+        //{
+        //    get
+        //    {
+        //        if (_instance == null)
+        //        {
+        //            _instance = new PersonManager();
+        //        }
 
-                return _instance;
-            }
-        }
+        //        return _instance;
+        //    }
+        //}
         public IEnumerable<Person?> Search(string query)
         {
             return people.Where(s => (s != null) && s.Name.ToUpper().Contains(query.ToUpper()));
@@ -146,11 +177,13 @@ namespace csharpa1
             Console.WriteLine("Enter the student ID");
             id = Console.ReadLine();
             Console.WriteLine("Enter the student classification (Fr/So/Jr/Sr)");
+            //classification = Console.ReadLine();
             classification = Console.ReadLine();
+            
             Console.WriteLine("Enter the Student grades (separate by space)");
             grades = Console.ReadLine();
 
-            Person? newPerson = new Person(name, classification, grades);
+            Person? newPerson = new Person { Name = name, Classification = ClassSetter(classification), Grades = grades };
 
             Console.WriteLine("Student " + newPerson.Name + " created.");
 
@@ -159,7 +192,21 @@ namespace csharpa1
 
         }
         
-        
+        public PersonClassification ClassSetter(string? str)
+        {
+            switch (str)
+            {
+                case "Fr":
+                    return PersonClassification.Freshman;
+                case "So":
+                    return PersonClassification.Sophomore;
+                case "Jr":
+                    return PersonClassification.Junior;
+                case "Sr":
+                    return PersonClassification.Senior;
+                default: return PersonClassification.Freshman;
+            }
+        }
         public void DisplayPeople()
         {
             Console.WriteLine("List of People: ");

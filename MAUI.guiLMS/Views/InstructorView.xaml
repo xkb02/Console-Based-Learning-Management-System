@@ -4,8 +4,11 @@
              x:Class="MAUI.guiLMS.Views.InstructorView"
              Title="InstructorView">
     <VerticalStackLayout>
+     
         <Label 
             Text="Instructor View"
+            Padding="30,0"
+            Spacing="25"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button

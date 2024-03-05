@@ -12,13 +12,13 @@ namespace csharpa1
     {
         //private fields
         private string? name;
-        private string? classification;
+        private PersonClassification? classification;
         private string? grades;
         private string? id;
         private List<string>? enrolledCourses;
 
         //constructor
-        public Person(string? pName, string? pClassification, string? pGrades)
+        public Person(string? pName, PersonClassification? pClassification, string? pGrades)
         {
             Name = pName;
             Classification = pClassification;
@@ -26,6 +26,10 @@ namespace csharpa1
             EnrolledCourses = new List<string>();
         }
 
+        public Person()
+        {
+
+        }
         //public properties
         
         public List<string> EnrolledCourses
@@ -44,7 +48,7 @@ namespace csharpa1
             get { return name; }
             set { name = value; }
         }
-        public string? Classification 
+        public PersonClassification? Classification 
         { 
             get { return classification; } 
             set { classification = value; } 

@@ -7,12 +7,12 @@ namespace MAUI.guiLMS.Views;
 
 public partial class PersonDetailView : ContentPage
 {
-	public PersonDetailView()
-	{
-		InitializeComponent();
+    public PersonDetailView()
+    {
+        InitializeComponent();
 
         BindingContext = new PersonDetailViewModel();
-	}
+    }
 
     //public int PersonId
     //{
@@ -24,7 +24,7 @@ public partial class PersonDetailView : ContentPage
         //(BindingContext as PersonDetailViewModel).AddPerson();
 
         var context = BindingContext as PersonDetailViewModel;
-        PersonClassification classification;
+        PersonClassification classification = PersonClassification.Freshman;
         switch (context.ClassificationString)
         {
             case "S":
@@ -41,22 +41,23 @@ public partial class PersonDetailView : ContentPage
                 break;
 
         }
-        PersonManager.Current.Add(new Person { Name = context.Name, Classification = classification });
+      PersonManager.Current.AddPerson(new Person { Name = context.Name, Classification = classification });
+        Shell.Current.GoToAsync("//Instructor");
     }
 
-//    private void CancelClick(object sender, EventArgs e)
-//    {
-//        Shell.Current.GoToAsync("//Instructor");
-//    }
 
-//    private void OnLeaving(object sender, NavigatedFromEventArgs e)
-//    {
-//        BindingContext = null;
-//    }
+private void CancelClick(object sender, EventArgs e)
+{
+    Shell.Current.GoToAsync("//Instructor");
+}
 
-//    private void OnArriving(object sender, NavigatedToEventArgs e)
-//    {
-//        BindingContext = new PersonDetailViewModel(PersonId);
-//    }
+private void OnLeaving(object sender, NavigatedFromEventArgs e)
+{
+    BindingContext = null;
+}
+
+//private void OnArriving(object sender, NavigatedToEventArgs e)
+//{
+//    BindingContext = new PersonDetailViewModel(PersonId);
 //}
-//}
+}
