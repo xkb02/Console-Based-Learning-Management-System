@@ -8,14 +8,17 @@ namespace csharpa1.Database
 {
     public static class FakeDatabase
     {
-        public static List<Person> people 
+       private static List<Person> people = new List<Person>();
+        private static List<Course> courses = new List<Course>();
+        
+        public static List<Person> People 
         {
                 get
-                { 
-                    return new List<Person>(); 
+                {
+                return people; 
                 }
         }
-        public static List<Course> courses
+        public static List<Course> Courses
         { 
             get 
             { 

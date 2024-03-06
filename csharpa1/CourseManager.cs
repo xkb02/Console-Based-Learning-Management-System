@@ -22,7 +22,7 @@ namespace csharpa1
         {
             get
             {
-                return FakeDatabase.courses;
+                return FakeDatabase.Courses;
             }
         }
         public static CourseManager Current
@@ -41,7 +41,7 @@ namespace csharpa1
 
         public void AddCourse(Course course)
         {
-            FakeDatabase.courses.Add(course);
+            FakeDatabase.Courses.Add(course);
         }
         public void AddAssignment(Assignment asgn)
         {
@@ -95,7 +95,7 @@ namespace csharpa1
                 Console.WriteLine("Enter Course name: ");
                 var name = Console.ReadLine();
                 bool found = false;
-                foreach (var course in FakeDatabase.courses)
+                foreach (var course in FakeDatabase.Courses)
                 {
                     if (course.Name == name)
                     {
@@ -116,7 +116,7 @@ namespace csharpa1
                 Console.WriteLine("Enter course code: ");
                 var code = Console.ReadLine();
                 bool found = false;
-                foreach (var course in FakeDatabase.courses)
+                foreach (var course in FakeDatabase.Courses)
                 {
                     if (course.Code == code)
                     {
@@ -138,7 +138,7 @@ namespace csharpa1
                 Console.WriteLine("Enter course description: ");
                 var desc = Console.ReadLine();
                 bool found = false;
-                foreach (var course in FakeDatabase.courses)
+                foreach (var course in FakeDatabase.Courses)
                 {
                     if (course.Description == desc)
                     {
@@ -164,7 +164,7 @@ namespace csharpa1
             Console.WriteLine("Update a Course's Information, Enter the code of the course you wish to update: ");
             var code = Console.ReadLine();
             bool found = false;
-            foreach (var course in FakeDatabase.courses)
+            foreach (var course in FakeDatabase.Courses)
             {
                 if (course.Code == code)
                 {
@@ -192,6 +192,8 @@ namespace csharpa1
                 Console.WriteLine(course.Name + " | Code: " +course.Code);
             }
         }
+        
+        
         //function to display the roster of a given course
         public void DisplayCourseRoster()
         {
