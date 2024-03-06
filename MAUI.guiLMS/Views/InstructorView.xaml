@@ -7,8 +7,6 @@
      
         <Label 
             Text="Instructor View"
-            Padding="30,0"
-            Spacing="25"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button

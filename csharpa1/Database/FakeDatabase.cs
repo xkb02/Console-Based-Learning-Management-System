@@ -14,8 +14,8 @@ namespace csharpa1.Database
         public static List<Person> People 
         {
                 get
-                { 
-                    return new List<Person>(); 
+                {
+                return people; 
                 }
         }
         public static List<Course> Courses

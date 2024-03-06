@@ -14,10 +14,10 @@ public partial class PersonDetailView : ContentPage
         BindingContext = new PersonDetailViewModel();
     }
 
-    //public int PersonId
-    //{
-    //    set; get;
-    //}
+    public int PersonId
+    {
+        set; get;
+    }
 
     private void OkClick(object sender, EventArgs e)
     {
@@ -56,8 +56,8 @@ private void OnLeaving(object sender, NavigatedFromEventArgs e)
     BindingContext = null;
 }
 
-//private void OnArriving(object sender, NavigatedToEventArgs e)
-//{
-//    BindingContext = new PersonDetailViewModel(PersonId);
-//}
+    private void OnArriving(object sender, NavigatedToEventArgs e)
+    {
+        BindingContext = new PersonDetailViewModel(PersonId);
+    }
 }

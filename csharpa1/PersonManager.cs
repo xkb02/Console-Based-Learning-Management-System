@@ -60,22 +60,7 @@ namespace csharpa1
                     person.Name = Console.ReadLine();
                     Console.WriteLine("Enter the new student classification: ");
 
-                    switch (Console.ReadLine())
-                    {
-                        case "Fr":
-                            person.Classification = PersonClassification.Freshman;
-                            break;
-                        case "So":
-                            person.Classification = PersonClassification.Sophomore;
-                            break;
-                        case "Jr":
-                            person.Classification = PersonClassification.Junior;
-                            break;
-                        case "Sr":
-                            person.Classification = PersonClassification.Senior;
-                            break;
-
-                    }
+                    ClassSetter(Console.ReadLine());
 
                     Console.WriteLine("Enter the new student grades: ");
                     person.Grades = Console.ReadLine();

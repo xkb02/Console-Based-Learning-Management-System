@@ -14,6 +14,7 @@ namespace MAUI.guiLMS.ViewModels
 
         public PersonDetailViewModel(object personId)
         {
+
         }
 
         public string Name { get; set; }
