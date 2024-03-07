@@ -60,4 +60,9 @@ private void OnLeaving(object sender, NavigatedFromEventArgs e)
     {
         BindingContext = new PersonDetailViewModel(PersonId);
     }
+
+    private void ContentPage_NavigatedFrom(object sender, NavigatedFromEventArgs e)
+    {
+
+    }
 }
