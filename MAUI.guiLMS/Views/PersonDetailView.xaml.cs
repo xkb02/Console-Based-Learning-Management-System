@@ -22,29 +22,28 @@ public partial class PersonDetailView : ContentPage
     private void OkClick(object sender, EventArgs e)
     {
         //(BindingContext as PersonDetailViewModel).AddPerson();
+        (BindingContext as PersonDetailViewModel).AddPerson();
+      //  var context = BindingContext as PersonDetailViewModel;
+      //  PersonClassification classification = PersonClassification.Freshman;
+      //  switch (context.ClassificationString)
+      //  {
+      //      case "S":
+      //          classification = PersonClassification.Senior;
+      //          break;
+      //      case "O":
+      //          classification = PersonClassification.Sophomore;
+      //          break;
+      //      case "J":
+      //          classification = PersonClassification.Junior;
+      //          break;
+      //      case "F":
+      //          classification = PersonClassification.Freshman;
+      //          break;
 
-        var context = BindingContext as PersonDetailViewModel;
-        PersonClassification classification = PersonClassification.Freshman;
-        switch (context.ClassificationString)
-        {
-            case "S":
-                classification = PersonClassification.Senior;
-                break;
-            case "O":
-                classification = PersonClassification.Sophomore;
-                break;
-            case "J":
-                classification = PersonClassification.Junior;
-                break;
-            case "F":
-                classification = PersonClassification.Freshman;
-                break;
-
-        }
-      PersonManager.Current.AddPerson(new Person { Name = context.Name, Classification = classification });
-        Shell.Current.GoToAsync("//Instructor");
+      //  }
+      //PersonManager.Current.AddPerson(new Person { Name = context.Name, Classification = classification });
+      //  Shell.Current.GoToAsync("//Instructor");
     }
-
 
 private void CancelClick(object sender, EventArgs e)
 {
@@ -58,7 +57,7 @@ private void OnLeaving(object sender, NavigatedFromEventArgs e)
 
     private void OnArriving(object sender, NavigatedToEventArgs e)
     {
-        BindingContext = new PersonDetailViewModel(PersonId);
+        BindingContext = new PersonDetailViewModel(/*PersonId*/);
     }
 
     private void ContentPage_NavigatedFrom(object sender, NavigatedFromEventArgs e)
