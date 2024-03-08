@@ -21,8 +21,10 @@ namespace MAUI.guiLMS.ViewModels
 
         public string Name { get; set; }
 
+        public int? Id { get; set; }
         public string ClassificationString { get; set; }
 
+        int id = 1;
         public void AddPerson()
         {
             PersonClassification classification = PersonClassification.Freshman;
@@ -42,7 +44,9 @@ namespace MAUI.guiLMS.ViewModels
                     break;
 
             }
-            PersonManager.Current.AddPerson(new Person { Name = Name, Classification = classification });
+            
+            PersonManager.Current.AddPerson(new Person { Name = Name, Classification = classification, Id = id });
+            id++;
             Shell.Current.GoToAsync("//Instructor");
         }
     }
