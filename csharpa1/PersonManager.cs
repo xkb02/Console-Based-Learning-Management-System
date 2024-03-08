@@ -41,7 +41,10 @@ namespace csharpa1
         {
             FakeDatabase.People.Add(person);
         }
-
+        public void RemovePerson(Person person)
+        {
+            FakeDatabase.People.Remove(person);
+        }
         public PersonManager()
         {
             

@@ -23,6 +23,7 @@ namespace MAUI.guiLMS.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
         
+        public Person SelectedPerson { get; set; }
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -38,5 +39,12 @@ namespace MAUI.guiLMS.ViewModels
             NotifyPropertyChanged(nameof(People)); 
         }
 
+        internal void RemoveClick()
+        {
+            if(SelectedPerson == null) { return; }
+
+            PersonManager.Current.RemovePerson(SelectedPerson);
+            RefreshView();
+        }
     }
 }
