@@ -13,6 +13,7 @@ namespace csharpa1
         private string? code;
         private string? name;
         private string? description;
+        private string? prefix;
         private List<Person>? roster;
         private List<Module>? modules;
         private List<Assignment>? assignments;
@@ -74,6 +75,12 @@ namespace csharpa1
             set { description = value; }
         }
 
+        public string? Prefix
+        {
+            get { return prefix; }
+            set { prefix = value; }
+        }
+
         //functions
 
         public void AddStudent(Person person)
@@ -103,7 +110,7 @@ namespace csharpa1
        // public void UpdateInfo(string)
         public override string ToString()
         {
-            return name + " | Code: " + code + " | Description: " + description;
+            return prefix + " - " + Name;
         }
 
         

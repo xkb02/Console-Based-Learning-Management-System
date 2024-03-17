@@ -34,4 +34,19 @@ public partial class InstructorView : ContentPage
 	{
         (BindingContext as InstructorViewViewModel).EditClick(Shell.Current);
     }
+
+    private void AddCourseClick(object sender, EventArgs e)
+    {
+        (BindingContext as InstructorViewViewModel).AddCourseClick(Shell.Current);
+    }
+
+    private void Toolbar_EnrollmentsClicked(object sender, EventArgs e)
+    {
+        (BindingContext as InstructorViewViewModel).ShowEnrollments();
+    }
+
+    private void Toolbar_CoursesClicked(object sender, EventArgs e)
+    {
+        (BindingContext as InstructorViewViewModel).ShowCourses();
+    }
 }
