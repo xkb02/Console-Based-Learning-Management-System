@@ -91,7 +91,7 @@ namespace csharpa1
 
         public override string ToString()
         {
-            return name + " | classification:  " + classification + " | grades: " + grades;
+            return " [ " + Id + " ] " + name + " - " + classification;
         }
     }
 }

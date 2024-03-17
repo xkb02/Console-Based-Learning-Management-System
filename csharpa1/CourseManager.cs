@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace csharpa1
 {
 
-    internal class CourseManager
+    public class CourseManager
     {
         //creates a list of all the courses created in the program
         //public List<Course> courses = new List<Course>();
