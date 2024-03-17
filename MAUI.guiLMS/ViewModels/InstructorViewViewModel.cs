@@ -31,7 +31,12 @@ namespace MAUI.guiLMS.ViewModels
         
         public void AddClick(Shell s)
         {
-            s.GoToAsync("//PersonDetail");
+            s.GoToAsync($"//PersonDetail?personId=0");
+        }
+        public void EditClick(Shell s)
+        {
+            var idParam = SelectedPerson?.Id ?? 0;
+            s.GoToAsync($"//PersonDetail?personId={idParam}");
         }
 
         public void RefreshView()
