@@ -17,13 +17,29 @@ namespace MAUI.guiLMS.ViewModels
         public ObservableCollection<Person> People {
             get
             {
-                return new ObservableCollection<Person>(PersonManager.Current.people);
+                var filteredList = PersonManager
+                    .Current
+                    .people
+                    .Where(
+                    s => s.Name.ToUpper().Contains(Query?.ToUpper() ?? string.Empty));
+                return new ObservableCollection<Person>(filteredList);
             }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
         
         public Person SelectedPerson { get; set; }
+
+        private string query;
+        public string Query
+        {
+            get => query;
+            set
+            {
+                query = value;
+                NotifyPropertyChanged(nameof(People));
+            }
+        }
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
