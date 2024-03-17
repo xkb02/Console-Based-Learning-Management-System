@@ -14,7 +14,7 @@ namespace csharpa1
         private string? name;
         private PersonClassification? classification;
         private string? grades;
-        private int? id;
+        //private int id;
         private List<string>? enrolledCourses;
 
         //constructor
@@ -26,9 +26,11 @@ namespace csharpa1
             EnrolledCourses = new List<string>();
         }
 
+        private static int LastId = 0;
         public Person()
         {
-
+            Name=string.Empty;
+            Id = ++LastId;
         }
         //public properties
         
@@ -38,10 +40,9 @@ namespace csharpa1
             set { enrolledCourses = value; }
         }
 
-        public int? Id
+        public int Id
         {
-            get { return id; }
-            set { id = value; }
+            get; private set;
         }
         public string? Name
         {

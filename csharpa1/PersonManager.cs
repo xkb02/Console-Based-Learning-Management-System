@@ -203,5 +203,10 @@ namespace csharpa1
                 Console.WriteLine(person);
             }
         }
+
+        public Person GetById(int id)
+        {
+            return FakeDatabase.People.FirstOrDefault(p => p.Id == id);
+        }
     }
 }
