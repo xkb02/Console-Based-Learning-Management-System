@@ -215,6 +215,10 @@ namespace csharpa1
 
         }
 
+        public Course GetById(int id)
+        {
+            return FakeDatabase.Courses.FirstOrDefault(p => p.Id == id);
+        }
         public void AssignmentAdder()
         {
             string? code;

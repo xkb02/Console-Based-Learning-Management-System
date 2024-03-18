@@ -1,4 +1,6 @@
 ﻿using csharpa1;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace MAUI.guiLMS.ViewModels
 {
@@ -37,6 +39,36 @@ namespace MAUI.guiLMS.ViewModels
         {
             CourseManager.Current.AddCourse(course);
             s.GoToAsync("//Instructor");
+        }
+        private void LoadById(int id)
+        {
+            if (id == 0) { return; }
+            var course = CourseManager.Current.GetById(id) as Course;
+            if (course != null)
+            {
+                Name = course.Name;
+                Prefix = course.Prefix;
+                Id = course.Id;
+            }
+
+            NotifyPropertyChanged(nameof(Name));
+            NotifyPropertyChanged(nameof(Prefix));
+            NotifyPropertyChanged(nameof(Description));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        }
+
+        public CourseDetailViewModel(int id = 0)
+        {
+            if (id > 0)
+            {
+                LoadById(id);
+            }
         }
     }
 }

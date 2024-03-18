@@ -11,6 +11,7 @@ namespace csharpa1
     {
         //private fields
         private string? code;
+        private int id;
         private string? name;
         private string? description;
         private string? prefix;
@@ -79,6 +80,12 @@ namespace csharpa1
         {
             get { return prefix; }
             set { prefix = value; }
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
         }
 
         //functions

@@ -67,6 +67,7 @@
                 />
             <Button
                 Text="Edit Course"
+                Clicked="EditCourseClick"
                 />
             <Button
                 Text="Remove Course"

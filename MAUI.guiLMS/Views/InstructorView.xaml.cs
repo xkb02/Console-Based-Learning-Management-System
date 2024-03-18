@@ -49,4 +49,9 @@ public partial class InstructorView : ContentPage
     {
         (BindingContext as InstructorViewViewModel).ShowCourses();
     }
+
+    private void EditCourseClick(object sender, EventArgs e)
+    {
+        (BindingContext as InstructorViewViewModel).EditCourseClick(Shell.Current);
+    }
 }

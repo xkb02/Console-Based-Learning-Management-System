@@ -110,12 +110,18 @@ namespace MAUI.guiLMS.ViewModels
         {
             s.GoToAsync($"//CourseDetail");
         }
-        internal void RemoveClick()
+        public void RemoveClick()
         {
             if(SelectedPerson == null) { return; }
 
             PersonManager.Current.RemovePerson(SelectedPerson);
             RefreshView();
+        }
+
+        public void EditCourseClick(Shell s)
+        {
+            var CodeParam = SelectedCourse?.Id ?? 0;
+            s.GoToAsync($"//PersonDetail?courseId={CodeParam}");
         }
     }
 }
