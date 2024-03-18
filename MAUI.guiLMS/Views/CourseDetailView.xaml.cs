@@ -24,10 +24,15 @@ public partial class CourseDetailView : ContentPage
 
     private void OkClicked(object sender, EventArgs e)
     {
-        (BindingContext as CourseDetailViewModel).AddCourse(Shell.Current);
+        (BindingContext as CourseDetailViewModel).AddCourse(/*Shell.Current*/);
     }
     private void OnArriving(object sender, NavigatedToEventArgs e)
     {
         BindingContext = new CourseDetailViewModel(CourseId);
+    }
+
+    private void OnLeaving(object sender, NavigatedFromEventArgs e)
+    {
+        BindingContext = null;
     }
 }

@@ -35,11 +35,25 @@ namespace MAUI.guiLMS.ViewModels
 
         private Course course;
 
-        public void AddCourse(Shell s)
+        public void AddCourse()
         {
-            CourseManager.Current.AddCourse(course);
-            s.GoToAsync("//Instructor");
+
+            if (Id <= 0)
+            {
+                CourseManager.Current.AddCourse(new Course { Name = Name, Prefix = Prefix, Description = Description, Id = Id });
+
+            }
+            else
+            {
+                var refToUpdate = CourseManager.Current.GetById(Id) as Course;
+                refToUpdate.Name = Name;
+                refToUpdate.Prefix = Prefix;
+                refToUpdate.Description = Description;
+                Shell.Current.GoToAsync("//Instructor");
+            }
+
         }
+
         private void LoadById(int id)
         {
             if (id == 0) { return; }

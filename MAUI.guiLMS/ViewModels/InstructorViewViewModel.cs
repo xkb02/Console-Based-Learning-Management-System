@@ -108,8 +108,14 @@ namespace MAUI.guiLMS.ViewModels
 
         public void AddCourseClick(Shell s)
         {
-            s.GoToAsync($"//CourseDetail");
+            s.GoToAsync($"//CourseDetail?courseId=0");
         }
+
+        //public void EditClick(Shell s)
+        //{
+        //    var idParam = SelectedPerson?.Id ?? 0;
+        //    s.GoToAsync($"//PersonDetail?personId={idParam}");
+        //}
         public void RemoveClick()
         {
             if(SelectedPerson == null) { return; }
