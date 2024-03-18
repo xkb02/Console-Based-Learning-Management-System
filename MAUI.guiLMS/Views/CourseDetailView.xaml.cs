@@ -22,6 +22,7 @@ public partial class CourseDetailView : ContentPage
         Shell.Current.GoToAsync("//Instructor");
     }
 
+
     private void OkClicked(object sender, EventArgs e)
     {
         (BindingContext as CourseDetailViewModel).AddCourse(/*Shell.Current*/);

@@ -41,7 +41,7 @@ namespace MAUI.guiLMS.ViewModels
             if (Id <= 0)
             {
                 CourseManager.Current.AddCourse(new Course { Name = Name, Prefix = Prefix, Description = Description, Id = Id });
-
+                Shell.Current.GoToAsync("//Instructor");
             }
             else
             {
