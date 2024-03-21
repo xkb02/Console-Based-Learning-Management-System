@@ -33,10 +33,10 @@ namespace csharpa1
                 modules = new List<Module>();
                 assignments = new List<Assignment>();
             }
-
+        public static int LastId = 0;
         public Course()
         {
-
+            Id = ++LastId;
         }
         //public properties
         

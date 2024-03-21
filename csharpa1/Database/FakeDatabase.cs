@@ -22,9 +22,9 @@ namespace csharpa1.Database
         {
             get
             {
+                //Courses.Select(c => c.id).Max() + 1;
                 return courses;
             }
         }
-
     }
 }

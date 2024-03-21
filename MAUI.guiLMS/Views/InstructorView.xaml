@@ -37,6 +37,7 @@
         <Button
             Text="Add Enrollment"
             Clicked="AddEnrollmentClicked"
+            Margin="10"
             />
         <Button
             Text="Edit Enrollment"

@@ -41,6 +41,7 @@ namespace csharpa1
 
         public void AddCourse(Course course)
         {
+            //if this thing has an id of zero, set it to whatever the next id should be. in fake database he has Courses.Select(c=>c.id).Max()+1
             FakeDatabase.Courses.Add(course);
         }
         public void AddAssignment(Assignment asgn)
