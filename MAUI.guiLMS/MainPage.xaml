@@ -12,10 +12,12 @@
             <Button
                 Text="Student View"
                 Clicked="StudentClicked"
+                Margin="10"
                 ></Button>
             <Button
                 Text="Instructor View"
                 Clicked="InstructorClicked"
+                Margin="10"
                 ></Button>
 
         </VerticalStackLayout>

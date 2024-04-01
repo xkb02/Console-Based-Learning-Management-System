@@ -42,14 +42,17 @@
         <Button
             Text="Edit Enrollment"
             Clicked="EditEnrollmentClick"
+            Margin="10"
             />
         <Button
             Text="Remove Enrollment"
             Clicked="RemoveEnrollmentClick"
+            Margin="10"
             />
         <Button
             Text="Cancel"
             Clicked="CancelClicked"
+            Margin="10"
             />
     </VerticalStackLayout>
         <!--COURSES-->
@@ -65,17 +68,21 @@
             <Button 
                 Text="Add Course"
                 Clicked="AddCourseClick"
+                Margin="10"
                 />
             <Button
                 Text="Edit Course"
                 Clicked="EditCourseClick"
+                Margin="10"
                 />
             <Button
                 Text="Remove Course"
+                Margin="10"
                 />
 
             <Button
                 Text="Cancel"
+                Margin="10"
                 />
         </VerticalStackLayout>
     </VerticalStackLayout>
