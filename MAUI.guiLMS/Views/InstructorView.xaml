@@ -82,6 +82,7 @@
 
             <Button
                 Text="Cancel"
+                Clicked="CancelClicked"
                 Margin="10"
                 />
         </VerticalStackLayout>

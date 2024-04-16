@@ -65,7 +65,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\csharpa1\csharpa1.csproj" />
+	  <ProjectReference Include="..\csharpa1.library\csharpa1.library.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="csharpa1.library">
+	    <HintPath>..\csharpa1.library\bin\Debug\net8.0\csharpa1.library.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 	<ItemGroup>
