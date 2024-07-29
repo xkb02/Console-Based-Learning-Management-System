@@ -1,4 +1,4 @@
-using csharpa1;
+
 using MAUI.guiLMS.ViewModels;
 
 namespace MAUI.guiLMS.Views;
@@ -25,7 +25,7 @@ public partial class CourseDetailView : ContentPage
 
     private void OkClicked(object sender, EventArgs e)
     {
-        (BindingContext as CourseDetailViewModel).AddCourse(/*Shell.Current*/);
+        (BindingContext as CourseDetailViewModel).AddCourse();
     }
     private void OnArriving(object sender, NavigatedToEventArgs e)
     {

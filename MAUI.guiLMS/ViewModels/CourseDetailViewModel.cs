@@ -11,6 +11,7 @@ namespace MAUI.guiLMS.ViewModels
             course = new Course();
         }
 
+
         public string Name
         {
             get => course?.Name ?? string.Empty;
