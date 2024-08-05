@@ -43,7 +43,7 @@ namespace csharpa1
         {
             //if this thing has an id of zero, set it to whatever the next id should be. in fake database he has Courses.Select(c=>c.id).Max()+1
             if (course.Id == 0) 
-            { course.Id = lastId++; }
+            { course.Id = ++lastId; }
             FakeDatabase.Courses.Add(course);
         }
         public void AddAssignment(Assignment asgn)

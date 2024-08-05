@@ -8,7 +8,7 @@ public partial class CourseDetailView : ContentPage
     public CourseDetailView()
     {
         InitializeComponent();
-        BindingContext = new CourseDetailViewModel();
+        //BindingContext = new CourseDetailViewModel();
     }
 
 

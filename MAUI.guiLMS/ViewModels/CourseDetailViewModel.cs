@@ -6,27 +6,18 @@ namespace MAUI.guiLMS.ViewModels
 {
     internal class CourseDetailViewModel
     {
-        public CourseDetailViewModel()
-        {
-            course = new Course();
-        }
+        //public CourseDetailViewModel()
+        //{
+        //    course = new Course();
+        //}
 
 
-        public string Name
-        {
-            get => course?.Name ?? string.Empty;
-            set { if (course != null) course.Name = value; }
-        }
-        public string Description
-        {
-            get => course?.Description ?? string.Empty;
-            set { if (course != null) course.Description = value; }
-        }
-        public string Prefix
-        {
-            get => course?.Prefix ?? string.Empty;
-            set { if (course != null) course.Prefix = value; }
-        }
+        public string Name { get; set; }
+    
+        public string Description { get; set; }
+   
+        public string Prefix { get; set; }
+
         public int Id { get; set; }
 
         public string CourseCode
@@ -84,6 +75,7 @@ namespace MAUI.guiLMS.ViewModels
             {
                 LoadById(id);
             }
+            else { course = new Course(); }
         }
     }
 }
