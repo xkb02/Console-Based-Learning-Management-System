@@ -124,6 +124,14 @@ namespace MAUI.guiLMS.ViewModels
             RefreshView();
         }
 
+        public void RemoveCourseClick()
+        {
+            if (SelectedCourse == null) { return; }
+
+            CourseManager.Current.RemoveCourse(SelectedCourse);
+            RefreshView();
+        }
+
         public void EditCourseClick(Shell s)
         {
             var CodeParam = SelectedCourse?.Id ?? 0;
