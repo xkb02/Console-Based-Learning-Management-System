@@ -46,6 +46,12 @@ namespace csharpa1
             { course.Id = ++lastId; }
             FakeDatabase.Courses.Add(course);
         }
+
+        public void RemoveCourse(Course course)
+        {
+            
+            FakeDatabase.Courses.Remove(course);
+        }
         public void AddAssignment(Assignment asgn)
         {
             assignments.Add(asgn);
