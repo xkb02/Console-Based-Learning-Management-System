@@ -10,14 +10,14 @@ namespace csharpa1
     public class Course
     {
         //private fields
-        private string? code;
+        private string code;
         private int id;
-        private string? name;
-        private string? description;
-        private string? prefix;
-        private List<Person>? roster;
-        private List<Module>? modules;
-        private List<Assignment>? assignments;
+        private string name;
+        private string description;
+        private string prefix;
+        private List<Person> roster;
+        private List<Module> modules;
+        private List<Assignment> assignments;
 
 
         
@@ -76,7 +76,7 @@ namespace csharpa1
             set { description = value; }
         }
 
-        public string? Prefix
+        public string Prefix
         {
             get { return prefix; }
             set { prefix = value; }
@@ -117,7 +117,7 @@ namespace csharpa1
        // public void UpdateInfo(string)
         public override string ToString()
         {
-            return prefix + " - " + Name;
+            return " [ " + id + " ] " + prefix + " - " + Name;
         }
 
         

@@ -25,6 +25,7 @@
         <Button
             Text="Ok"
             Clicked="OkClick"
+            Margin="10"
             />
     </VerticalStackLayout>
 </ContentPage>

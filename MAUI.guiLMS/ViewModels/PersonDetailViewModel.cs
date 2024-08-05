@@ -63,7 +63,8 @@ namespace MAUI.guiLMS.ViewModels
             if (Id <= 0)
             {
                 PersonManager.Current.AddPerson(new Person { Name = Name, Classification = StringToClass(ClassificationString),});
-                
+                Shell.Current.GoToAsync("//Instructor");
+
             }
             else
             {
